@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorLighterBlack">#2b2d30</color>
+    <color name="colorDarkerBlack">#26282b</color>
+    <color name="colorStockCourt">#66bd9f</color>
+    <color name="colorGrey">#5e6064</color>
+    <color name="colorDarkerWhite">#e8eaef</color>
+    <color name="colorWarningRed">#e25252</color>
+</resources>

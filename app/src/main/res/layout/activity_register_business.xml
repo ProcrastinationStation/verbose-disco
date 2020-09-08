@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress InjectedReferences -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/background_photo" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="178dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@mipmap/stockcourt4x" />
+
+    <ImageButton
+        android:id="@+id/businessBackBtn"
+        android:layout_width="31dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:srcCompat="@mipmap/back4x" />
+
+    <EditText
+        android:id="@+id/businessCompanyNameTxt"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="Company name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        android:drawableLeft="@mipmap/company4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessEmailTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/businessCompanyNameTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessCompanyNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessCompanyNameTxt"
+        android:drawableLeft="@mipmap/email4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessPassTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="Password - minimum 6 characters"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/businessEmailTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessEmailTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessEmailTxt"
+        android:drawableLeft="@mipmap/password4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessAddressTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:drawableLeft="@mipmap/email_or_address4x"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/businessPassTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessPassTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessPassTxt" />
+
+    <EditText
+        android:id="@+id/businessCityTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="City"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/businessAddressTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessAddressTxt"
+        android:drawableLeft="@mipmap/city4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessZIPTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="ZIP code"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/businessAddressTxt"
+        app:layout_constraintStart_toEndOf="@+id/businessCityTxt"
+        app:layout_constraintTop_toTopOf="@+id/businessCityTxt"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessCountryTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="Country"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/businessZIPTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessCityTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessCityTxt"
+        android:drawableLeft="@mipmap/country4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/businessTaxTxt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDarkerWhite"
+        android:ems="10"
+        android:hint="Tax number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/businessCountryTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessCountryTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessCountryTxt"
+        android:drawableLeft="@mipmap/tax_number4x"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        />
+
+    <CheckBox
+        android:id="@+id/businessCheckBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="I want to recieve short &amp; relevant financial information to my email adress."
+        android:textColor="@color/colorDarkerWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/businessTaxTxt"
+        app:layout_constraintStart_toStartOf="@+id/businessTaxTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessTaxTxt" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="When you Register, you agree to our Terms &amp; Conditions and have read our Privacy Policy."
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkerWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/businessCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/businessCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/businessCheckBox" />
+
+    <Button
+        android:id="@+id/businessRegisterBtn"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorLighterBlack"
+        android:text="REGISTER"
+        android:textColor="@color/colorDarkerWhite"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

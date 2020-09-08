@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/indicesFragment"
+        android:name="UI.ui.MainFragments.IndicesFragment"
+        android:label="fragment_indices"
+        tools:layout="@layout/fragment_indices" />
+    <fragment
+        android:id="@+id/stocksFragment"
+        android:name="UI.ui.MainFragments.StocksFragment"
+        android:label="fragment_stocks"
+        tools:layout="@layout/fragment_stocks" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="UI.ui.MainFragments.HomeFragment"
+        android:label="fragment_home2"
+        tools:layout="@layout/fragment_home2" />
+    <fragment
+        android:id="@+id/comoditiesFragment"
+        android:name="UI.ui.MainFragments.ComoditiesFragment"
+        android:label="fragment_comodities"
+        tools:layout="@layout/fragment_commodities" />
+    <fragment
+        android:id="@+id/currenciesFragment"
+        android:name="UI.ui.MainFragments.CurrenciesFragment"
+        android:label="fragment_currencies"
+        tools:layout="@layout/fragment_currencies" />
+</navigation>
