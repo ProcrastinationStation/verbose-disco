@@ -18,12 +18,12 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="UI.ui.MainFragments.HomeFragment"
-        android:label="fragment_home2"
-        tools:layout="@layout/fragment_home2" />
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/comoditiesFragment"
+        android:id="@+id/commoditiesFragment"
         android:name="UI.ui.MainFragments.ComoditiesFragment"
-        android:label="fragment_comodities"
+        android:label="fragment_commodities"
         tools:layout="@layout/fragment_commodities" />
     <fragment
         android:id="@+id/currenciesFragment"

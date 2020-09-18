@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="UI.MainActivity">
+    tools:context=".Models.Controller.MainActivity">
 
     <ImageView
         android:id="@+id/imageView7"
@@ -67,10 +67,12 @@
             android:textAllCaps="false"
             android:textColor="@color/colorGrey"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/mainSignUpTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="mainSignUpTxtClicked"
             android:text="Still don`t have an account? Sign up here."
             android:textAlignment="center"
             android:textColor="@color/colorDarkerWhite"

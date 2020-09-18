@@ -1,20 +1,18 @@
-package UI
+package com.example.stockcourt.Models.Controller
 
-import UI.ui.MainFragments.*
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import com.example.stockcourt.R
-import kotlinx.android.synthetic.main.activity_trends.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+    mainSignUpTxt.isClickable
 
     }
 
@@ -28,6 +26,11 @@ class MainActivity : AppCompatActivity() {
 
     fun loginGoogleBtnClicked(view: View) {
 
+    }
+
+    fun mainSignUpTxtClicked(view: View) {
+        val mainSignUpIntent = Intent(this, RegisterActivity:: class.java)
+        startActivity(mainSignUpIntent)
     }
 
 

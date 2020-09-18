@@ -12,17 +12,23 @@
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait"
         >
-        <activity android:name="UI.ui.TrendsActivity"></activity>
-        <activity android:name="UI.LoginActivity" />
-        <activity
-            android:name="UI.MainActivity"
+        <activity android:name=".Models.Controller.TrendsActivity"
+            android:launchMode="singleTop"
             >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Models.Controller.TrendsActivity"
+                />
+
+        </activity>
+        <activity android:name=".Models.Controller.LoginActivity" />
+        <activity android:name=".Models.Controller.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Models.Controller.RegisterActivity"/>
     </application>
 
 </manifest>
