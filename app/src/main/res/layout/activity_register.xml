@@ -124,10 +124,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewBusinessRegister"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:onClick="businessSignUpClicked"
         android:text="Need an invoice? Create a business account."
         android:textAlignment="center"
         android:textColor="@color/colorDarkerWhite"

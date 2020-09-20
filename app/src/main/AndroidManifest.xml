@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Models.Controller.RegisterActivity"/>
+        <activity android:name=".Models.Controller.BusinessRegisterActivity"/>
     </application>
 
 </manifest>
