@@ -7,6 +7,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.beust.klaxon.Json
 import com.beust.klaxon.Parser
+import com.example.stockcourt.Models.Utilities.GET_FEATURED
 import com.example.stockcourt.Models.Utilities.GET_POSTS
 import com.google.gson.GsonBuilder
 import okhttp3.Call
@@ -20,6 +21,43 @@ import java.net.URL
 
 object GetPosts {
 
+
+    //Get featured post model
+    fun fetchJsonFeatured() {
+        println("Attempting to fetch JSON featured posts")
+
+        val request = Request.Builder().url(GET_FEATURED).build()
+
+        val client = OkHttpClient()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onResponse(call: Call, response: okhttp3.Response) {
+                val body = response?.body?.string()
+                println(body)
+
+                val gson = GsonBuilder().create()
+
+                val BodyResponseFeaturedParsed = gson.fromJson(body, BodyResponseFeatured:: class.java)
+                println(BodyResponseFeaturedParsed)
+
+/*
+                runOnUiThread {
+                    recyclerViewFeatured.adapter = MainAdapterFeatured(BodyResponseFeaturedParsed)
+                }*/
+            }
+
+
+
+            override fun onFailure(call: Call, e: IOException) {
+                println("Failed to execute request(featured)")
+            }
+        })
+
+
+    }
+
+
+
+    //Get main post model
     fun fetchJsonPost() {
         println("Attempting to fetch JSON")
 
@@ -86,6 +124,15 @@ val tags: List<String>,
 val name: String
 ) {}
 
+data class BodyResponseFeatured(
+    val featured: List<Featured>
+)
 
+data class Featured (
+    val id: Long,
+    val slug: String,
+    val image: String,
+    val title: String
+)
 
-}}
+}
