@@ -2,6 +2,7 @@ package com.example.stockcourt.Models.Services
 
 import UI.ui.MainFragments.HomeFragment
 import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -39,10 +40,10 @@ object GetPosts {
                 val BodyResponseFeaturedParsed = gson.fromJson(body, BodyResponseFeatured:: class.java)
                 println(BodyResponseFeaturedParsed)
 
-/*
-                runOnUiThread {
-                    recyclerViewFeatured.adapter = MainAdapterFeatured(BodyResponseFeaturedParsed)
-                }*/
+
+
+
+
             }
 
 
@@ -76,11 +77,9 @@ object GetPosts {
                 println(BodyResponseParsed)
 
 
-        /*        runOnUiThread {
-                    recyclerView_main.adapter = MainAdapter(BodyResponseParsed)
-                }
 
-         */
+
+
             }
 
             override fun onFailure(call: Call, e: IOException) {
