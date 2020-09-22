@@ -14,6 +14,12 @@ class TrendsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trends)
 
+        fun Fragment?.runOnUiThread(action: () -> Unit) {
+            this ?: return
+            if (!isAdded) return // Fragment not attached to an Activity
+            activity?.runOnUiThread(action)
+        }
+
         val homeFragment = HomeFragment()
         val commoditiesFragment = ComoditiesFragment()
         val currenciesFragment = CurrenciesFragment()

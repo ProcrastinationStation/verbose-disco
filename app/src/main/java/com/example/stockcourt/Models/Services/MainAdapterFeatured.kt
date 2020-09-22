@@ -1,5 +1,6 @@
 package com.example.stockcourt.Models.Services
 
+import UI.ui.MainFragments.HomeFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import com.example.stockcourt.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.featured_post.view.*
 
-class MainAdapterFeatured(val bodyResponseFeatured: GetPosts.BodyResponseFeatured): RecyclerView.Adapter<CustomViewHolderFeatured>() {
+class MainAdapterFeatured(val bodyResponseFeatured: HomeFragment.BodyResponseFeatured): RecyclerView.Adapter<CustomViewHolderFeatured>() {
 
     override fun getItemCount(): Int {
         return bodyResponseFeatured.featured.count()

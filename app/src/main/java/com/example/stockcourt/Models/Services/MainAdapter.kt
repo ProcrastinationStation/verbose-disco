@@ -1,5 +1,6 @@
 package com.example.stockcourt.Models.Services
 
+import UI.ui.MainFragments.HomeFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import com.example.stockcourt.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.post.view.*
 
-class MainAdapter(val bodyResponse: GetPosts.BodyResponse): RecyclerView.Adapter<CustomViewHolder>() {
+class MainAdapter(val bodyResponse: HomeFragment.BodyResponse): RecyclerView.Adapter<CustomViewHolder>() {
 
     //Number of items
     override fun getItemCount(): Int {
