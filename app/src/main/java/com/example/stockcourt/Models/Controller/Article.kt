@@ -1,28 +1,24 @@
 package com.example.stockcourt.Models.Controller
 
-import UI.ui.MainFragments.HomeFragment
-import android.app.PendingIntent.getActivity
+
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.stockcourt.Models.Controller.Article.article
-import com.example.stockcourt.Models.Services.MainAdapter
+import androidx.core.text.parseAsHtml
 import com.example.stockcourt.Models.Utilities.GET_POST
-import com.example.stockcourt.Models.Utilities.GET_POSTS
-import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.article
-import com.example.stockcourt.R.layout.post
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.post.*
 import kotlinx.android.synthetic.main.post.view.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.jsoup.Jsoup
+import org.jsoup.select.Elements
 import java.io.IOException
-import java.util.logging.Logger.global
 
 class Article: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,25 +28,16 @@ class Article: AppCompatActivity() {
 
 
 
-
-
-
-
         val slug = intent.getStringExtra("slug")
-
-
-
-        println(slug)
 
         fetchJsonArticle(slug)
 
 
+
     }
 
-    fun setContentView(article: article) {
-        textViewArticleHeader.text = article.title
-        textViewArticleBody.text = article.body
-    }
+
+
 
 
 
@@ -64,15 +51,20 @@ class Article: AppCompatActivity() {
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: okhttp3.Response) {
                 val body = response?.body?.string()
-                println(body)
 
 
                 val gson = GsonBuilder().create()
 
-                val BodyResponseParsed = gson.fromJson(body, Article.article:: class.java)
-                println(BodyResponseParsed)
+                val BodyResponseParsed = gson.fromJson(body, Article:: class.java)
 
-                textViewArticleHeader.text = BodyResponseParsed.title
+                runOnUiThread {
+                    textViewArticleHeader.text = BodyResponseParsed.title
+                    textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
+
+                    val thumbnailImageView = imageViewArticleHeader
+                    Picasso.get().load(BodyResponseParsed.image).into(thumbnailImageView)
+                }
+
 
             }
 
@@ -84,7 +76,8 @@ class Article: AppCompatActivity() {
     }
 
 
-    data class article(
+
+    data class Article(
         val id: Long,
         val title: String,
         val description: String,
@@ -106,10 +99,7 @@ class Article: AppCompatActivity() {
        // String
        // ],
         val name: String
-
-
-
-    ){}
+    )
 
 
 

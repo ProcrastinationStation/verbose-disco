@@ -14,7 +14,6 @@ import com.android.volley.toolbox.Volley
 import com.example.stockcourt.Models.Utilities.GET_REGISTER_TOKEN
 import com.example.stockcourt.Models.Utilities.REGISTER_USER
 import com.example.stockcourt.R.layout.activity_register_business
-import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register_business.*
 import org.json.JSONObject
 import java.io.UnsupportedEncodingException
