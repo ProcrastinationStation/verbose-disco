@@ -1,10 +1,12 @@
 package com.example.stockcourt.Models.Services
 
 import UI.ui.MainFragments.HomeFragment
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.stockcourt.Models.Controller.Article
 import com.example.stockcourt.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.post.view.*
@@ -33,6 +35,7 @@ class MainAdapter(val bodyResponse: HomeFragment.BodyResponse): RecyclerView.Ada
         val thumbnailImageView = holder.view.imageView_postHeader
         Picasso.get().load(post.image).into(thumbnailImageView)
 
+        holder.slug = post.slug
 
     }
 
@@ -40,6 +43,19 @@ class MainAdapter(val bodyResponse: HomeFragment.BodyResponse): RecyclerView.Ada
 }
 
 
-class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+class CustomViewHolder(val view: View, var slug: String = ""): RecyclerView.ViewHolder(view) {
 
+
+    init {
+        view.setOnClickListener {
+
+            val intent = Intent(view.context, Article::class.java)
+
+
+            intent.putExtra("slug", slug)
+
+            view.context.startActivity(intent)
+
+        }
+    }
 }

@@ -31,6 +31,12 @@
         </activity>
         <activity android:name=".Models.Controller.RegisterActivity"/>
         <activity android:name=".Models.Controller.BusinessRegisterActivity"/>
+        <activity android:name=".Models.Controller.Article"
+            android:label="Article"
+            android:launchMode="singleTop">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Models.Controller.TrendsActivity"/>
+        </activity>
     </application>
 
 </manifest>
