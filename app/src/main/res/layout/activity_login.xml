@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/stockcourt_with_motto_1_5x" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/loginEmail"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
@@ -54,7 +54,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/loginPassword"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -62,9 +62,9 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/loginEmail"
+        app:layout_constraintStart_toStartOf="@+id/loginEmail"
+        app:layout_constraintTop_toBottomOf="@+id/loginEmail"
         android:drawableLeft="@mipmap/password4x"
         android:drawablePadding="16dp"
         android:padding="16dp"
@@ -78,8 +78,8 @@
         android:text="Forgot your password?"
         android:textColor="@color/colorDarkerWhite"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
 
     <Button
         android:id="@+id/loginLoginBtn"

@@ -3,7 +3,9 @@ package com.example.stockcourt.Models.Controller
 import UI.ui.MainFragments.HomeFragment
 import android.app.PendingIntent.getActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.stockcourt.Models.Controller.Article.article
 import com.example.stockcourt.Models.Services.MainAdapter
 import com.example.stockcourt.Models.Utilities.GET_POST
 import com.example.stockcourt.Models.Utilities.GET_POSTS
@@ -11,7 +13,10 @@ import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.article
 import com.example.stockcourt.R.layout.post
 import com.google.gson.GsonBuilder
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.article.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.post.view.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -25,6 +30,12 @@ class Article: AppCompatActivity() {
         setContentView(article)
 
 
+
+
+
+
+
+
         val slug = intent.getStringExtra("slug")
 
 
@@ -33,7 +44,15 @@ class Article: AppCompatActivity() {
 
         fetchJsonArticle(slug)
 
+
     }
+
+    fun setContentView(article: article) {
+        textViewArticleHeader.text = article.title
+        textViewArticleBody.text = article.body
+    }
+
+
 
     fun fetchJsonArticle(slug: String?) {
         println("Attempting to fetch JSON")
@@ -52,6 +71,8 @@ class Article: AppCompatActivity() {
 
                 val BodyResponseParsed = gson.fromJson(body, Article.article:: class.java)
                 println(BodyResponseParsed)
+
+                textViewArticleHeader.text = BodyResponseParsed.title
 
             }
 
@@ -88,9 +109,7 @@ class Article: AppCompatActivity() {
 
 
 
-    ){
-
-    }
+    ){}
 
 
 

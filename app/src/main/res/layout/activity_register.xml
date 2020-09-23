@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/stockcourt_with_motto_1_5x" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/registerEmail"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
@@ -60,9 +60,9 @@
         android:hint="Display name"
         android:inputType="textPersonName"
         android:textColor="@color/colorDarkerBlack"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/registerEmail"
+        app:layout_constraintStart_toStartOf="@+id/registerEmail"
+        app:layout_constraintTop_toBottomOf="@+id/registerEmail"
         android:drawableLeft="@mipmap/name4x"
         android:drawablePadding="16dp"
         android:padding="16dp"

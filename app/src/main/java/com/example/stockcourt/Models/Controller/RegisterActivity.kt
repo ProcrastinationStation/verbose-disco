@@ -1,6 +1,5 @@
 package com.example.stockcourt.Models.Controller
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,9 +15,7 @@ import com.example.stockcourt.Models.Utilities.GET_REGISTER_TOKEN
 import com.example.stockcourt.Models.Utilities.REGISTER_USER
 import com.example.stockcourt.R.layout.activity_register
 import kotlinx.android.synthetic.main.activity_register.*
-import okhttp3.*
 import org.json.JSONObject
-import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.net.CookieHandler
 import java.net.CookieManager
@@ -110,9 +107,9 @@ class RegisterActivity: AppCompatActivity() {
 
         val queue = Volley.newRequestQueue(this)
 
-        val email = editTextTextEmailAddress.toString()
-        val name = editTextTextPersonName.toString()
-        val password = editTextTextPassword2.toString()
+        val email = registerEmail.text.toString()
+        val name = editTextTextPersonName.text.toString()
+        val password = editTextTextPassword2.text.toString()
 
 
         val jsonBody = JSONObject()
@@ -123,7 +120,7 @@ class RegisterActivity: AppCompatActivity() {
         jsonBody.put("city", "")
         jsonBody.put("comment", "")
         jsonBody.put("companyname", "")
-        jsonBody.put("email", "lukka.ivanovic@gmail.com")
+        jsonBody.put("email", email)
         jsonBody.put("industry", "")
         jsonBody.put("mobile", "")
         jsonBody.put("name", name)
@@ -132,7 +129,10 @@ class RegisterActivity: AppCompatActivity() {
         jsonBody.put("taxnum", "")
         jsonBody.put("surname", "")
         val requestBody = jsonBody.toString()
-        val registerRequest = object : StringRequest(Method.POST, "https://helloworld3-gjhzfsu4ba-uc.a.run.app/api/auth/register/", Response.Listener { response ->
+
+        println(email)
+
+        val registerRequest = object : StringRequest(Method.POST, REGISTER_USER, Response.Listener { response ->
             complete(true)
             Log.d("RESPONSE", "$response")
         }, Response.ErrorListener { error ->
