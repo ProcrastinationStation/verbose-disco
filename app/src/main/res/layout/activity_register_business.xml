@@ -45,58 +45,55 @@
     <EditText
         android:id="@+id/businessCompanyNameTxt"
         android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/company4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Company name"
         android:inputType="textPersonName"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        android:drawableLeft="@mipmap/company4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <EditText
         android:id="@+id/businessEmailTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/email4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/businessCompanyNameTxt"
         app:layout_constraintStart_toStartOf="@+id/businessCompanyNameTxt"
-        app:layout_constraintTop_toBottomOf="@+id/businessCompanyNameTxt"
-        android:drawableLeft="@mipmap/email4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/businessCompanyNameTxt" />
 
     <EditText
         android:id="@+id/businessPassTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/password4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Password - minimum 6 characters"
         android:inputType="textPassword"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/businessEmailTxt"
         app:layout_constraintStart_toStartOf="@+id/businessEmailTxt"
-        app:layout_constraintTop_toBottomOf="@+id/businessEmailTxt"
-        android:drawableLeft="@mipmap/password4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/businessEmailTxt" />
 
     <EditText
         android:id="@+id/businessAddressTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
         android:drawableLeft="@mipmap/email_or_address4x"
@@ -112,68 +109,64 @@
     <EditText
         android:id="@+id/businessCityTxt"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/city4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="City"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/businessAddressTxt"
-        app:layout_constraintTop_toBottomOf="@+id/businessAddressTxt"
-        android:drawableLeft="@mipmap/city4x"
-        android:drawablePadding="16dp"
         android:padding="16dp"
-        />
+        app:layout_constraintStart_toStartOf="@+id/businessAddressTxt"
+        app:layout_constraintTop_toBottomOf="@+id/businessAddressTxt" />
 
     <EditText
         android:id="@+id/businessZIPTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="ZIP code"
         android:inputType="textPersonName"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/businessAddressTxt"
         app:layout_constraintStart_toEndOf="@+id/businessCityTxt"
-        app:layout_constraintTop_toTopOf="@+id/businessCityTxt"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toTopOf="@+id/businessCityTxt" />
 
     <EditText
         android:id="@+id/businessCountryTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/country4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Country"
         android:inputType="textPersonName"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/businessZIPTxt"
         app:layout_constraintStart_toStartOf="@+id/businessCityTxt"
-        app:layout_constraintTop_toBottomOf="@+id/businessCityTxt"
-        android:drawableLeft="@mipmap/country4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/businessCityTxt" />
 
     <EditText
         android:id="@+id/businessTaxTxt"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/tax_number4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Tax number"
         android:inputType="textPersonName"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/businessCountryTxt"
         app:layout_constraintStart_toStartOf="@+id/businessCountryTxt"
-        app:layout_constraintTop_toBottomOf="@+id/businessCountryTxt"
-        android:drawableLeft="@mipmap/tax_number4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/businessCountryTxt" />
 
     <CheckBox
         android:id="@+id/businessCheckBox"

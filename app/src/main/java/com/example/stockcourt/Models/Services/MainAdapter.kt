@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.stockcourt.Models.Controller.Article
 import com.example.stockcourt.R
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.article.*
 import kotlinx.android.synthetic.main.post.view.*
 
 class MainAdapter(val bodyResponse: HomeFragment.BodyResponse): RecyclerView.Adapter<CustomViewHolder>() {
@@ -26,16 +27,49 @@ class MainAdapter(val bodyResponse: HomeFragment.BodyResponse): RecyclerView.Ada
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val post = bodyResponse.news.get(position)
-        holder.view.textViewHeader.text = post.title
 
-        holder.view.textViewArticle.text = post.description
+        holder.view.textViewHeader.text = post.title //set post title
 
-        holder.view.textViewDatePublished.text = post.createdOn
+        holder.view.textViewArticle.text = post.description //set post description
 
-        val thumbnailImageView = holder.view.imageView_postHeader
+        val thumbnailImageView = holder.view.imageView_postHeader //set post image
         Picasso.get().load(post.image).into(thumbnailImageView)
 
-        holder.slug = post.slug
+        holder.slug = post.slug //set slug to pass to Article activity
+
+        val date = post.created_on
+
+
+
+
+        var delimiter1 = "-"
+        var delimiter2 = "T"
+
+        var dateParsed = date.split(delimiter1, delimiter2)
+
+        var month = ""
+
+
+        when(dateParsed[1]) {
+            "01" -> month = "JAN"
+            "02" -> month = "FEB"
+            "03" -> month = "MAR"
+            "04" -> month = "APR"
+            "05" -> month = "MAY"
+            "06" -> month = "JUN"
+            "07" -> month = "JUL"
+            "08" -> month = "AUG"
+            "09" -> month = "SEP"
+            "10" -> month = "OCT"
+            "11" -> month = "NOV"
+            "12" -> month = "DEC"
+        }
+
+        val dateProperFormat = dateParsed[2] + " " + month + " " + dateParsed[0]
+
+        holder.view.textViewDatePublished.text = dateProperFormat
+
+
 
     }
 

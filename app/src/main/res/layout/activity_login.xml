@@ -38,37 +38,35 @@
     <EditText
         android:id="@+id/loginEmail"
         android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/email_or_address4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:padding="16dp"
         android:textColor="@color/colorGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerLogo"
-        android:drawableLeft="@mipmap/email_or_address4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/registerLogo" />
 
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corners"
+        android:drawableLeft="@mipmap/password4x"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="@+id/loginEmail"
         app:layout_constraintStart_toStartOf="@+id/loginEmail"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail"
-        android:drawableLeft="@mipmap/password4x"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/loginEmail" />
 
     <TextView
         android:id="@+id/forgotPassTxt"

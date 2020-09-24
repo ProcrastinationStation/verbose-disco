@@ -107,6 +107,7 @@ class HomeFragment : Fragment() {
                 getActivity()?.runOnUiThread(){
                     RecyclerViewMain.adapter = MainAdapter(BodyResponseParsed)
                 }
+                
             }
 
             override fun onFailure(call: Call, e: IOException) {
@@ -126,25 +127,18 @@ class HomeFragment : Fragment() {
         val id: Long,
         val title: String,
         val description: String,
-        @Json(name = "meta_title")
         val metaTitle: String,
-        @Json(name = "meta_description")
         val metaDescription: String,
         val image: String,
         val slug: String,
         val body: String,
-        @Json(name = "body_contents")
         val bodyContents: String,
         val approved: Long,
         val featured: Long,
-        @Json(name = "created_on")
-        val createdOn: String,
-        @Json(name = "updated_on")
+        val created_on: String,
         val updatedOn: String,
         val views: Long,
-        @Json(name = "written_by_user")
         val writtenByUser: Long,
-        @Json(name = "approved_by_user")
         val approvedByUser: Any? = null,
         val tags: List<String>,
         val name: String
