@@ -1,6 +1,7 @@
 package com.example.stockcourt.Models.Controller
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -34,10 +35,16 @@ class Article: AppCompatActivity() {
 
 
 
+
+
     }
 
 
 
+    fun articleBackBtnClicked(view: View) {
+        val backIntent = Intent(this, TrendsActivity:: class.java)
+        startActivity(backIntent)
+    }
 
 
 
@@ -60,6 +67,8 @@ class Article: AppCompatActivity() {
                 runOnUiThread {
                     textViewArticleHeader.text = BodyResponseParsed.title
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
+
+                    println(BodyResponseParsed.created_on)
 
                     val thumbnailImageView = imageViewArticleHeader
                     Picasso.get().load(BodyResponseParsed.image).into(thumbnailImageView)

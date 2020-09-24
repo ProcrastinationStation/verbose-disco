@@ -43,9 +43,6 @@ class HomeFragment : Fragment() {
         return inflater.inflate(fragment_home, container, false)
     }
 
-    fun imageViewFeaturedClicked(view: View) {
-
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -70,12 +67,10 @@ class HomeFragment : Fragment() {
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: okhttp3.Response) {
                 val body = response?.body?.string()
-                println(body)
 
                 val gson = GsonBuilder().create()
 
                 val BodyResponseFeaturedParsed = gson.fromJson(body, BodyResponseFeatured:: class.java)
-                println(BodyResponseFeaturedParsed)
 
             getActivity()?.runOnUiThread(){
                 RecyclerViewFeatured.adapter = MainAdapterFeatured(BodyResponseFeaturedParsed)
@@ -103,24 +98,15 @@ class HomeFragment : Fragment() {
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: okhttp3.Response) {
                 val body = response?.body?.string()
-                println(body)
 
 
                 val gson = GsonBuilder().create()
 
                 val BodyResponseParsed = gson.fromJson(body, BodyResponse:: class.java)
-                println(BodyResponseParsed)
-
-                println(BodyResponseParsed)
 
                 getActivity()?.runOnUiThread(){
                     RecyclerViewMain.adapter = MainAdapter(BodyResponseParsed)
                 }
-
-
-
-
-
             }
 
             override fun onFailure(call: Call, e: IOException) {
