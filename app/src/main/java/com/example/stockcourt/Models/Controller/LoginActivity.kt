@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.NetworkResponse
@@ -39,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun loginLoginBtnClicked(view: View) {
 
-        getCSRF { CSRFToken -> loginUser(CSRFToken, {complete -> println("Success")} )
+        getCSRF { CSRFToken -> loginUser(CSRFToken, {complete -> } )
 
         }
 
@@ -96,6 +97,14 @@ class LoginActivity : AppCompatActivity() {
         val loginRequest = object : StringRequest(Method.POST, LOGIN_USER, Response.Listener { response ->
             complete(true)
             Log.d("RESPONSE", "$response")
+
+            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+
+            val trendsIntent = Intent(this, TrendsActivity::class.java)
+            startActivity(trendsIntent)
+
+
+
         }, Response.ErrorListener { error ->
             Log.d("ERROR", "Could not login user: $error")
             onErrorResponse(error)
@@ -138,6 +147,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         Log.d("BODY", body.toString())
+        Toast.makeText(this, "Could not login user, wrong or missing credentials", Toast.LENGTH_SHORT).show()
         //do stuff with the body...
     }
 

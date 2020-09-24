@@ -17,8 +17,6 @@ import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import org.jsoup.Jsoup
-import org.jsoup.select.Elements
 import java.io.IOException
 
 class Article: AppCompatActivity() {
@@ -28,13 +26,9 @@ class Article: AppCompatActivity() {
 
 
 
-
         val slug = intent.getStringExtra("slug")
 
         fetchJsonArticle(slug)
-
-
-
 
 
     }
