@@ -25,6 +25,7 @@ class MainAdapterFeatured(val bodyResponseFeatured: HomeFragment.BodyResponseFea
 
     override fun onBindViewHolder(holder: CustomViewHolderFeatured, position: Int) {
         val featured_post = bodyResponseFeatured.featured.get(position)
+
         holder.view.textViewFeaturedHeader.text = featured_post.title
 
         val thumbnailImageViewFeatured = holder.view.imageViewFeatured
