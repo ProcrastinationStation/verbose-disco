@@ -7,21 +7,20 @@ import androidx.fragment.app.Fragment
 import com.example.stockcourt.R
 import kotlinx.android.synthetic.main.activity_trends.*
 
+
 class TrendsActivity : AppCompatActivity() {
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trends)
 
-/*        fun Fragment?.runOnUiThread(action: () -> Unit) {
-            this ?: return
-            if (!isAdded) return // Fragment not attached to an Activity
-            activity?.runOnUiThread(action)
-        }*/
+
 
         val homeFragment = HomeFragment()
-        val commoditiesFragment = ComoditiesFragment()
+        val commoditiesFragment = CommoditiesFragment()
         val currenciesFragment = CurrenciesFragment()
         val indicesFragment = IndicesFragment()
         val stocksFragment = StocksFragment()
@@ -38,8 +37,12 @@ class TrendsActivity : AppCompatActivity() {
             }
             true
         }
+
+
         
     }
+
+
 
     private fun makeCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {

@@ -20,10 +20,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout

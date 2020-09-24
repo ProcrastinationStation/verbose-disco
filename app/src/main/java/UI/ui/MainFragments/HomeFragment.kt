@@ -12,8 +12,11 @@ import com.example.stockcourt.Models.Services.MainAdapter
 import com.example.stockcourt.Models.Services.MainAdapterFeatured
 import com.example.stockcourt.Models.Utilities.GET_FEATURED
 import com.example.stockcourt.Models.Utilities.GET_POSTS
+import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.fragment_home
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.GsonBuilder
+import kotlinx.android.synthetic.main.activity_trends.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.Call
 import okhttp3.Callback
@@ -26,9 +29,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
 
 
     }

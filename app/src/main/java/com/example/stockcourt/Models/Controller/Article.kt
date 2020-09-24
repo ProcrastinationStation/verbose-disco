@@ -2,8 +2,10 @@ package com.example.stockcourt.Models.Controller
 
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.parseAsHtml
 import com.example.stockcourt.Models.Utilities.GET_POST
@@ -12,12 +14,13 @@ import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article.*
 import kotlinx.android.synthetic.main.post.*
-import kotlinx.android.synthetic.main.post.view.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Article: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,33 +39,66 @@ class Article: AppCompatActivity() {
 
 
     fun articleBackBtnClicked(view: View) {
-        val backIntent = Intent(this, TrendsActivity:: class.java)
+        val backIntent = Intent(this, TrendsActivity::class.java)
         startActivity(backIntent)
     }
 
 
 
     fun fetchJsonArticle(slug: String?) {
-        println("Attempting to fetch JSON")
 
 
         val request = Request.Builder().url(GET_POST + slug).build()
 
         val client = OkHttpClient()
-        client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object : Callback {
+            @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(call: Call, response: okhttp3.Response) {
                 val body = response?.body?.string()
 
 
                 val gson = GsonBuilder().create()
 
-                val BodyResponseParsed = gson.fromJson(body, Article:: class.java)
+                val BodyResponseParsed = gson.fromJson(body, Article::class.java)
 
                 runOnUiThread {
                     textViewArticleHeader.text = BodyResponseParsed.title
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
 
-                    println(BodyResponseParsed.created_on)
+                    articleAuthor.text = BodyResponseParsed.written_by_user.toString()
+
+
+                    val date = BodyResponseParsed.created_on
+
+                    //2020-07-19T16:06:35.000Z
+
+                    var delimiter1 = "-"
+                    var delimiter2 = "T"
+
+                    var dateParsed = date.split(delimiter1, delimiter2)
+
+                    var month = ""
+
+
+                    when(dateParsed[1]) {
+                        "01" -> month = "JAN"
+                        "02" -> month = "FEB"
+                        "03" -> month = "MAR"
+                        "04" -> month = "APR"
+                        "05" -> month = "MAY"
+                        "06" -> month = "JUN"
+                        "07" -> month = "JUL"
+                        "08" -> month = "AUG"
+                        "09" -> month = "SEP"
+                        "10" -> month = "OCT"
+                        "11" -> month = "NOV"
+                        "12" -> month = "DEC"
+                    }
+
+                    val dateProperFormat = dateParsed[2] + " " + month + " " + dateParsed[0]
+
+                    articleDate.text = dateProperFormat
+
 
                     val thumbnailImageView = imageViewArticleHeader
                     Picasso.get().load(BodyResponseParsed.image).into(thumbnailImageView)
@@ -97,10 +133,10 @@ class Article: AppCompatActivity() {
         val views: Long,
         val written_by_user: Long,
         val approved_by_user: Long,
-       // val tags: [
-       // String,
-       // String
-       // ],
+        // val tags: [
+        // String,
+        // String
+        // ],
         val name: String
     )
 
