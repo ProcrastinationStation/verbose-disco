@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginGoogleBtnClicked(view: View) {
-        val loginGoogleIntent = Intent(this, TrendsActivity::class.java)
-        startActivity(loginGoogleIntent)
+ /*       val loginGoogleIntent = Intent(this, TrendsActivity::class.java)
+        startActivity(loginGoogleIntent)*/
     }
 
     fun mainSignUpTxtClicked(view: View) {

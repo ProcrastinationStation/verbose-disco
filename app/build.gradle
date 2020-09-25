@@ -55,4 +55,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'org.jetbrains:kotlin-css:1.0.0-pre.120-kotlin-1.4.10'
+
 }

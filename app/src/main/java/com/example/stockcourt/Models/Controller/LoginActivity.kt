@@ -2,6 +2,7 @@ package com.example.stockcourt.Models.Controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextPaint
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -33,8 +34,6 @@ class LoginActivity : AppCompatActivity() {
         val cookieManager = CookieManager()
         CookieHandler.setDefault(cookieManager)
 
-        /*val trendsIntent = Intent(this, TrendsActivity::class.java)
-        startActivity(trendsIntent)*/
 
     }
 
@@ -46,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
 
 
 

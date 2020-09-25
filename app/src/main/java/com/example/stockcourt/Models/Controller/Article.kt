@@ -14,6 +14,8 @@ import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article.*
 import kotlinx.android.synthetic.main.post.*
+import kotlinx.css.CSSBuilder
+import kotlinx.css.h1
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -63,7 +65,10 @@ class Article: AppCompatActivity() {
 
                 runOnUiThread {
                     textViewArticleHeader.text = BodyResponseParsed.title
+
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
+
+
 
                     articleAuthor.text = BodyResponseParsed.written_by_user.toString()
 

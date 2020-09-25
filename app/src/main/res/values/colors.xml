@@ -6,4 +6,14 @@
     <color name="colorGrey">#5e6064</color>
     <color name="colorDarkerWhite">#e8eaef</color>
     <color name="colorWarningRed">#e25252</color>
+    <color name="colorDarkestSC">#4e9078</color>
+    <color name="colorDarkerSC">#569f85</color>
+    <color name="colorLighterSC">#85d1b5</color>
+    <color name="colorLightestSC">#a3e5cc</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTranquil">#9bb5de</color>
+    <color name="colorSandy">#f7e5ab</color>
+    <color name="colorWatermelon">#f38787</color>
+    <color name="colorLime">#a2d190</color>
+    <color name="colorPrincess">#d6c0dd</color>
 </resources>

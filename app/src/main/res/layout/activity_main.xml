@@ -46,12 +46,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners_stockcourt"
+            android:fontFamily="@font/notoserif_regular"
             android:onClick="loginEmailBtnClicked"
             android:text="Login with email"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/loginGoogleBtn"
@@ -61,6 +61,7 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/rounded_corners"
             android:drawableLeft="@mipmap/google_logo4x"
+            android:fontFamily="@font/roboto_regular"
             android:onClick="loginGoogleBtnClicked"
             android:padding="12dp"
             android:text="Login with Google"
@@ -72,11 +73,12 @@
             android:id="@+id/mainSignUpTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/notoserif_regular"
             android:onClick="mainSignUpTxtClicked"
-            android:text="Still don`t have an account? Sign up here."
+            android:text="@string/Still_dont_have_an_account_Sign_up_here."
             android:textAlignment="center"
             android:textColor="@color/colorDarkerWhite"
-            android:textSize="17sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
