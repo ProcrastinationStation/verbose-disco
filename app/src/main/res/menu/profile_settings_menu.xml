@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/profileMenuEdit"
+        android:icon="@mipmap/edit4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Edit profile"
+        />
+
+    <item
+        android:id="@+id/profileMenuPackages"
+        android:icon="@mipmap/packages4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Packages"
+        />
+
+    <item
+        android:id="@+id/profileMenuHelp"
+        android:icon="@mipmap/help4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Help"
+        />
+
+    <item
+        android:id="@+id/profileMenuTerms"
+        android:icon="@mipmap/terms___conditions4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Terms and Conditions"
+        />
+
+    <item
+        android:id="@+id/profileMenuPrivacy"
+        android:icon="@mipmap/privacy_policy4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Privacy Policy"
+        />
+
+    <item
+        android:id="@+id/profileMenuLogout"
+        android:icon="@mipmap/logout4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Logout"
+        />
+
+    <item
+        android:id="@+id/profileMenuCancel"
+        android:icon="@mipmap/cancel4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Cancel"
+        />
+
+</menu>

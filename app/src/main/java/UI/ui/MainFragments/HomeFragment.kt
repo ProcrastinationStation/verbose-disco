@@ -1,5 +1,6 @@
 package UI.ui.MainFragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.beust.klaxon.Json
+import com.example.stockcourt.Models.Controller.Article
+import com.example.stockcourt.Models.Controller.ProfileActivity
 import com.example.stockcourt.Models.Controller.TrendsActivity
 import com.example.stockcourt.Models.Services.MainAdapter
 import com.example.stockcourt.Models.Services.MainAdapterFeatured
@@ -29,6 +32,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
 
     }

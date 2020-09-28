@@ -1,7 +1,9 @@
 package com.example.stockcourt.Models.Controller
 
 import UI.ui.MainFragments.*
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.stockcourt.R
@@ -40,6 +42,11 @@ class TrendsActivity : AppCompatActivity() {
 
 
         
+    }
+
+    fun homeProfileBtnClicked(view: View) {
+        val profileIntent = Intent(this, ProfileActivity::class.java)
+        startActivity(profileIntent)
     }
 
 
