@@ -23,6 +23,7 @@ import org.json.JSONObject
 import java.io.UnsupportedEncodingException
 import java.net.CookieHandler
 import java.net.CookieManager
+import java.util.logging.Logger.global
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +55,6 @@ class LoginActivity : AppCompatActivity() {
         val registerIntent = Intent(this, RegisterActivity::class.java)
         startActivity(registerIntent)
     }
-
 
 
     fun getCSRF(complete: (String) -> Unit) {
@@ -102,6 +102,7 @@ class LoginActivity : AppCompatActivity() {
 
             val trendsIntent = Intent(this, TrendsActivity::class.java)
             startActivity(trendsIntent)
+
 
 
 

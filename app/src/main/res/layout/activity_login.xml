@@ -48,7 +48,6 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="16dp"
-        android:textColor="@color/colorGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerLogo" />
