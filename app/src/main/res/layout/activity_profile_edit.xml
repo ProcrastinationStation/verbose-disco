@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLighterBlack">
+
+    <ImageButton
+        android:id="@+id/profileEditBackBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/menuitem_background"
+        android:onClick="profileEditBackBtnClicked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back4x" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/notoserif_regular"
+        android:text="@string/PROFILE_EDIT_EDIT"
+        android:textColor="@color/colorDarkerWhite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profileEditBackBtn" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5">
+
+        <Button
+            android:id="@+id/profileEditChangeNameBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/menuitem_background"
+            android:drawableRight="@mipmap/right4x"
+            android:drawableTint="@color/colorGrey"
+            android:fontFamily="@font/calibri_regular"
+            android:onClick="profileEditChangeNameBtnClicked"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/PROFILE_EDIT_CHANGENAME_BTN"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkerWhite"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <Button
+            android:id="@+id/profileEditChangeEmailBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/menuitem_background"
+            android:drawableRight="@mipmap/right4x"
+            android:drawableTint="@color/colorGrey"
+            android:fontFamily="@font/calibri_regular"
+            android:onClick="profileEditChangeEmailBtnClicked"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/PROFILE_EDIT_CHANGEEMAIL_BTN"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkerWhite"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <Button
+            android:id="@+id/profileEditChangePassBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/menuitem_background"
+            android:drawableRight="@mipmap/right4x"
+            android:drawableTint="@color/colorGrey"
+            android:fontFamily="@font/calibri_regular"
+            android:onClick="profileEditChangePassBtnClicked"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/PROFILE_EDIT_CHANGEPASS_BTN"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkerWhite"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <Button
+            android:id="@+id/profileEditPackagesBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/menuitem_background"
+            android:drawableRight="@mipmap/right4x"
+            android:drawableTint="@color/colorGrey"
+            android:fontFamily="@font/calibri_regular"
+            android:onClick="profileEditPackagesBtnClicked"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/PROFILE_EDIT_PACKAGES_BTN"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkerWhite"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+
+        <Button
+            android:id="@+id/profileEditDeleteAccountBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/menuitem_background"
+            android:drawableRight="@mipmap/right4x"
+            android:drawableTint="@color/colorGrey"
+            android:fontFamily="@font/calibri_regular"
+            android:onClick="profileEditDeleteAccountBtnClicked"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/PROFILE_EDIT_DELETEACCOUNT_BTN"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkerWhite"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

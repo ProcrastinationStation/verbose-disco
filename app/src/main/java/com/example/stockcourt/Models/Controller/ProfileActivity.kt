@@ -39,7 +39,7 @@ class ProfileActivity: AppCompatActivity() {
         bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
     }
 
-
+    //The edit image button that opens the edit image menu in the profile activity
     fun profileImageEditBtnClicked(view: View) {
         val profileImageMenuFragment = ProfileImageEditDrawerFragment()
         profileImageMenuFragment.show(supportFragmentManager, profileImageMenuFragment.tag)

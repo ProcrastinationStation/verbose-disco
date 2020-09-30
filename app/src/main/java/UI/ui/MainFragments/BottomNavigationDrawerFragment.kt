@@ -1,12 +1,15 @@
 package UI.ui.MainFragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.stockcourt.Models.Controller.Article
+import com.example.stockcourt.Models.Controller.ProfileEditActivity
 import com.example.stockcourt.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_profile.*

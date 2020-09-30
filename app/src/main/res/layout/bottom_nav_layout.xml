@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/colorLighterBlack"
+        app:itemIconTint="@color/colorDarkerWhite"
         app:itemTextColor="@color/colorDarkerWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

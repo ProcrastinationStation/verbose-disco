@@ -15,4 +15,10 @@
     <string name="PROFILE_EMAIL">EMAIL</string>
     <string name="PROFILE_PASSWORD">PASSWORD</string>
     <string name="PROFILE_ACCOUNT_TYPE">ACCOUNT TYPE</string>
+    <string name="PROFILE_EDIT_EDIT">EDIT</string>
+    <string name="PROFILE_EDIT_CHANGENAME_BTN">Change name</string>
+    <string name="PROFILE_EDIT_CHANGEEMAIL_BTN">Change email</string>
+    <string name="PROFILE_EDIT_CHANGEPASS_BTN">Change password</string>
+    <string name="PROFILE_EDIT_PACKAGES_BTN">Packages</string>
+    <string name="PROFILE_EDIT_DELETEACCOUNT_BTN">Delete account</string>
 </resources>
