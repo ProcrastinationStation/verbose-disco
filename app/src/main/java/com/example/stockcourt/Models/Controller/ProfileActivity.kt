@@ -1,6 +1,7 @@
 package com.example.stockcourt.Models.Controller
 
 import UI.ui.MainFragments.BottomNavigationDrawerFragment
+import UI.ui.MainFragments.ProfileImageEditDrawerFragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -38,12 +39,21 @@ class ProfileActivity: AppCompatActivity() {
         bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
     }
 
+
+    fun profileImageEditBtnClicked(view: View) {
+        val profileImageMenuFragment = ProfileImageEditDrawerFragment()
+        profileImageMenuFragment.show(supportFragmentManager, profileImageMenuFragment.tag)
+    }
+
+
     //the function that draws the menu in the profile activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.profile_settings_menu, menu)
         return true
     }
+
+    var token = LoginActivity.token
 
 
         var client = OkHttpClient()
@@ -52,6 +62,7 @@ class ProfileActivity: AppCompatActivity() {
             val request = Request.Builder()
                 .url(GET_USER)
                 .header("Content-Type", "application/json")
+                .header("_csrf", token)
                 .build()
 
 

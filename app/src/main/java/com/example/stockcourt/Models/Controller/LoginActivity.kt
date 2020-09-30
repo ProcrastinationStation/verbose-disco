@@ -36,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
         CookieHandler.setDefault(cookieManager)
 
 
+
+
     }
 
     fun loginLoginBtnClicked(view: View) {
@@ -50,10 +52,13 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-
     fun loginSignUpClicked(view: View) {
         val registerIntent = Intent(this, RegisterActivity::class.java)
         startActivity(registerIntent)
+    }
+
+    companion object {
+        var token = ""
     }
 
 
@@ -72,6 +77,8 @@ class LoginActivity : AppCompatActivity() {
                 val responseHeaders = response!!.headers
                 val rawCookies: String? = responseHeaders["magic-number"].also {
                     magicnumber = it.toString()
+
+                    token = magicnumber
                 }
                 return super.parseNetworkResponse(response);
             }

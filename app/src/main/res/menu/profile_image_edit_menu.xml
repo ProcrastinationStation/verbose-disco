@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profileImageMenuLibrary"
+        android:icon="@mipmap/library4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Library"
+        />
+
+    <item
+        android:id="@+id/profileImageMenuRemove"
+        android:icon="@mipmap/delete4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Remove Photo"
+        />
+
+    <item
+        android:id="@+id/profileImageMenuCancel"
+        android:icon="@mipmap/cancel4x"
+        android:iconTint="@color/colorDarkerWhite"
+        android:title="Cancel"
+        />
+
+</menu>
