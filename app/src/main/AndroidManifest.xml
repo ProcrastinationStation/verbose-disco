@@ -39,6 +39,7 @@
                 />
         </activity>
         <activity android:name=".Models.Controller.ProfileActivity"></activity>
+        <activity android:name=".Models.Controller.ProfileEditActivity"></activity>
     </application>
 
 </manifest>

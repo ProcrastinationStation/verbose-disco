@@ -29,7 +29,8 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
 
         bottom_navigation_view.setNavigationItemSelectedListener { menuItem ->
             when(menuItem!!.itemId) {
-                R.id.profileMenuEdit -> Toast.makeText(activity, "Pressed the edit button", Toast.LENGTH_SHORT).show()
+                R.id.profileMenuEdit -> {val editIntent = Intent(activity, ProfileEditActivity::class.java)
+                                        startActivity(editIntent)}
                 R.id.profileMenuPackages -> Toast.makeText(activity, "Pressed the packages button", Toast.LENGTH_SHORT).show()
                 R.id.profileMenuHelp -> Toast.makeText(activity, "Pressed the help button", Toast.LENGTH_SHORT).show()
                 R.id.profileMenuTerms  -> Toast.makeText(activity, "Pressed the terms button", Toast.LENGTH_SHORT).show()
