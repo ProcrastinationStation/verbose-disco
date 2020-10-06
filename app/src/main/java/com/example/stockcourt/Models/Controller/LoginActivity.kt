@@ -78,7 +78,6 @@ class LoginActivity : AppCompatActivity() {
                 val rawCookies: String? = responseHeaders["magic-number"].also {
                     magicnumber = it.toString()
 
-                    token = magicnumber
                 }
                 return super.parseNetworkResponse(response);
             }
@@ -123,6 +122,7 @@ class LoginActivity : AppCompatActivity() {
                 val rawCookies: String? = responseHeaders.get("magic-number").also {
                 }
                 Log.d("KURAC", rawCookies.toString())
+                token = rawCookies.toString()
                 return super.parseNetworkResponse(response);
             }
             override fun getBody(): ByteArray {

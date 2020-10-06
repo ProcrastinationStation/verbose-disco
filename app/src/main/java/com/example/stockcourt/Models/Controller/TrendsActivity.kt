@@ -8,16 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.stockcourt.R
 import kotlinx.android.synthetic.main.activity_trends.*
+import java.net.CookieHandler
+import java.net.CookieManager
 
 
 class TrendsActivity : AppCompatActivity() {
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trends)
+
+        val cookieManager = CookieManager()
+        CookieHandler.setDefault(cookieManager)
 
 
 
@@ -44,17 +47,16 @@ class TrendsActivity : AppCompatActivity() {
         
     }
 
-    fun homeProfileBtnClicked(view: View) {
-        val profileIntent = Intent(this, ProfileActivity::class.java)
-        startActivity(profileIntent)
-    }
-
-
 
     private fun makeCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fl_wrapper, fragment)
             commit()
         }
+    }
+
+    fun homeProfileBtnClicked(view: View) {
+        val profileIntent = Intent(this, ProfileActivity::class.java)
+        startActivity(profileIntent)
     }
 }

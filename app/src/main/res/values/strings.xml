@@ -22,4 +22,7 @@
     <string name="PROFILE_EDIT_PACKAGES_BTN">Packages</string>
     <string name="PROFILE_EDIT_DELETEACCOUNT_BTN">Delete account</string>
     <string name="PROFILE_CHANGE_NAME_NAME">NAME</string>
+    <string name="PROFILE_CHANGE_PASSWORD_NAME">PASSWORD</string>
+    <string name="PROFILE_CHANGE_PASSWORD_NEW_PASS">New Password</string>
+    <string name="PROFILE_CHANGE_PASSWORD_REPEAT_PASS">Repeat Password</string>
 </resources>

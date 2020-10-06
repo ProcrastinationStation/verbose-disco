@@ -19,7 +19,8 @@ class ProfileEditActivity: AppCompatActivity() {
     }
 
     fun profileEditChangeNameBtnClicked(view: View) {
-
+        val nameIntent = Intent(this, ProfileChangeNameActivity::class.java)
+        startActivity(nameIntent)
     }
 
     fun profileEditChangeEmailBtnClicked(view: View) {
@@ -27,7 +28,8 @@ class ProfileEditActivity: AppCompatActivity() {
     }
 
     fun profileEditChangePassBtnClicked(view: View) {
-
+        val passIntent = Intent(this, ProfileChangePasswordActivity::class.java)
+        startActivity(passIntent)
     }
 
     fun profileEditPackagesBtnClicked(view: View) {

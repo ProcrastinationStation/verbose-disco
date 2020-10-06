@@ -4,26 +4,31 @@
     <item
         android:id="@+id/stocksFragment"
         android:icon="@mipmap/stocks4x"
+        android:enabled="true"
         android:title="Stocks" />
 
     <item
         android:id="@+id/indicesFragment"
         android:icon="@mipmap/indices4x"
+        android:enabled="true"
         android:title="Indices" />
 
     <item
         android:id="@+id/trendsFragment"
         android:icon="@mipmap/stockcourt_or_home4x"
+        android:enabled="true"
         android:title="Home" />
 
     <item
         android:id="@+id/commoditiesFragment"
         android:icon="@mipmap/commodities4x"
+        android:enabled="true"
         android:title="Commodities" />
 
     <item
         android:id="@+id/currenciesFragment"
         android:icon="@mipmap/currencies4x"
+        android:enabled="true"
         android:title="Currencies" />
 
 </menu>

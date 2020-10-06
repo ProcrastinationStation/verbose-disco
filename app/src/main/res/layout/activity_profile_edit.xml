@@ -22,11 +22,11 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/notoserif_regular"
         android:text="@string/PROFILE_EDIT_EDIT"
         android:textColor="@color/colorDarkerWhite"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profileEditBackBtn" />
@@ -164,4 +164,5 @@
             android:layout_height="1dp"
             android:background="@color/colorGrey" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

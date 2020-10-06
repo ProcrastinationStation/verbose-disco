@@ -40,6 +40,10 @@
         </activity>
         <activity android:name=".Models.Controller.ProfileActivity"></activity>
         <activity android:name=".Models.Controller.ProfileEditActivity"></activity>
+        <activity android:name=".Models.Controller.ProfileChangeNameActivity"
+            android:launchMode="singleTop"
+            ></activity>
+        <activity android:name=".Models.Controller.ProfileChangePasswordActivity"></activity>
     </application>
 
 </manifest>
