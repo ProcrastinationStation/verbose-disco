@@ -2,7 +2,6 @@ package com.example.stockcourt.Models.Controller
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextPaint
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -17,13 +16,12 @@ import com.example.stockcourt.Models.Utilities.GET_REGISTER_TOKEN
 import com.example.stockcourt.Models.Utilities.LOGIN_USER
 import com.example.stockcourt.R
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.loginEmail
-import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONObject
 import java.io.UnsupportedEncodingException
 import java.net.CookieHandler
 import java.net.CookieManager
-import java.util.logging.Logger.global
+import java.net.CookiePolicy
+import java.net.CookieStore
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun loginLoginBtnClicked(view: View) {
 
-        getCSRF { CSRFToken -> loginUser(CSRFToken, {complete -> } )
+        getCSRF { CSRFToken -> loginUser(CSRFToken, { complete -> })
 
         }
 
@@ -59,17 +57,22 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         var token = ""
+        var sessionCookie1 = ""
     }
 
 
     fun getCSRF(complete: (String) -> Unit) {
         val queue = Volley.newRequestQueue(this)
         var magicnumber = ""
-        val loginRequest = object : StringRequest(Method.GET, GET_REGISTER_TOKEN, Response.Listener { response ->
-            complete("$magicnumber")
-        }, Response.ErrorListener { error ->
-            complete("$magicnumber")
-        }) {
+        val loginRequest = object : StringRequest(
+            Method.GET,
+            GET_REGISTER_TOKEN,
+            Response.Listener { response ->
+                complete("$magicnumber")
+            },
+            Response.ErrorListener { error ->
+                complete("$magicnumber")
+            }) {
             override fun getBodyContentType(): String {
                 return "application/json; charset=utf-8"
             }
@@ -100,29 +103,33 @@ class LoginActivity : AppCompatActivity() {
         val requestBody = jsonBody.toString()
 
 
-        val loginRequest = object : StringRequest(Method.POST, LOGIN_USER, Response.Listener { response ->
-            complete(true)
-            Log.d("RESPONSE", "$response")
+        val loginRequest = object : StringRequest(
+            Method.POST,
+            LOGIN_USER,
+            Response.Listener { response ->
+                complete(true)
+                Log.d("RESPONSE", "$response")
 
-            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
 
-            val trendsIntent = Intent(this, TrendsActivity::class.java)
-            startActivity(trendsIntent)
-
-
+                val trendsIntent = Intent(this, TrendsActivity::class.java)
+                startActivity(trendsIntent)
 
 
-        }, Response.ErrorListener { error ->
-            Log.d("ERROR", "Could not login user: $error")
-            onErrorResponse(error)
-            complete(false)
-        }) {
+            },
+            Response.ErrorListener { error ->
+                Log.d("ERROR", "Could not login user: $error")
+                onErrorResponse(error)
+                complete(false)
+            }) {
             override fun parseNetworkResponse(response: NetworkResponse?): Response<String> {
                 val responseHeaders = response!!.headers
                 val rawCookies: String? = responseHeaders.get("magic-number").also {
                 }
+                val sessionCookie: String? = responseHeaders.get("set-cookie")
                 Log.d("KURAC", rawCookies.toString())
                 token = rawCookies.toString()
+                sessionCookie1 = sessionCookie.toString()
                 return super.parseNetworkResponse(response);
             }
             override fun getBody(): ByteArray {
@@ -155,7 +162,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         Log.d("BODY", body.toString())
-        Toast.makeText(this, "Could not login user, wrong or missing credentials", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this,
+            "Could not login user, wrong or missing credentials",
+            Toast.LENGTH_SHORT
+        ).show()
         //do stuff with the body...
     }
 

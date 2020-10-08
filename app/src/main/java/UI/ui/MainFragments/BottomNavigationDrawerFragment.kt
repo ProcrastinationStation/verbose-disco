@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.stockcourt.Models.Controller.Article
 import com.example.stockcourt.Models.Controller.ProfileEditActivity
 import com.example.stockcourt.R
@@ -36,7 +37,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 R.id.profileMenuTerms  -> Toast.makeText(activity, "Pressed the terms button", Toast.LENGTH_SHORT).show()
                 R.id.profileMenuPrivacy -> Toast.makeText(activity, "Pressed the privacy button", Toast.LENGTH_SHORT).show()
                 R.id.profileMenuLogout -> Toast.makeText(activity, "Pressed the logout button", Toast.LENGTH_SHORT).show()
-                R.id.profileMenuCancel -> Toast.makeText(activity, "Pressed the cancel button", Toast.LENGTH_SHORT).show()
+                R.id.profileMenuCancel -> bottom_navigation_view.removeView(bottom_navigation_view)
+
+                    //Toast.makeText(activity, "Pressed the cancel button", Toast.LENGTH_SHORT).show()
             }
             true
         }

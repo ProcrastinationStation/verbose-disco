@@ -43,7 +43,12 @@
         <activity android:name=".Models.Controller.ProfileChangeNameActivity"
             android:launchMode="singleTop"
             ></activity>
-        <activity android:name=".Models.Controller.ProfileChangePasswordActivity"></activity>
+        <activity android:name=".Models.Controller.ProfileChangePasswordActivity"
+            android:launchMode="singleTop"
+            ></activity>
+        <activity android:name=".Models.Controller.ProfileChangeEmailActivity"
+            android:launchMode="singleTop"
+            ></activity>
     </application>
 
 </manifest>

@@ -24,6 +24,8 @@ class ProfileEditActivity: AppCompatActivity() {
     }
 
     fun profileEditChangeEmailBtnClicked(view: View) {
+        val emailIntent = Intent(this, ProfileChangeEmailActivity::class.java)
+        startActivity(emailIntent)
 
     }
 
