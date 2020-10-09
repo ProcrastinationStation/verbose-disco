@@ -21,7 +21,6 @@ import java.io.UnsupportedEncodingException
 import java.net.CookieHandler
 import java.net.CookieManager
 import java.net.CookiePolicy
-import java.net.CookieStore
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +32,7 @@ class LoginActivity : AppCompatActivity() {
         val cookieManager = CookieManager()
         CookieHandler.setDefault(cookieManager)
 
-
-
+        CookieHandler.setDefault(CookieManager(null, CookiePolicy.ACCEPT_ALL))
 
     }
 

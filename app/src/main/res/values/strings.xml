@@ -14,6 +14,7 @@
     <string name="PROFILE_NAME">NAME</string>
     <string name="PROFILE_EMAIL">EMAIL</string>
     <string name="PROFILE_PASSWORD">PASSWORD</string>
+    <string name="PROFILE_PASSWORD_USER">********</string>
     <string name="PROFILE_ACCOUNT_TYPE">ACCOUNT TYPE</string>
     <string name="PROFILE_EDIT_EDIT">EDIT</string>
     <string name="PROFILE_EDIT_CHANGENAME_BTN">Change name</string>
@@ -24,8 +25,8 @@
     <string name="PROFILE_CHANGE_NAME_NAME">NAME</string>
     <string name="PROFILE_CHANGE_NAME_NEW_NAME">New Name</string>
     <string name="PROFILE_CHANGE_PASSWORD_NAME">PASSWORD</string>
-    <string name="PROFILE_CHANGE_PASSWORD_NEW_PASS">New Password</string>
-    <string name="PROFILE_CHANGE_PASSWORD_REPEAT_PASS">Repeat Password</string>
+    <string name="PROFILE_CHANGE_PASSWORD_NEW_PASS">Current Password</string>
+    <string name="PROFILE_CHANGE_PASSWORD_REPEAT_PASS">New Password</string>
     <string name="PROFILE_CHANGE_EMAIL_NAME">EMAIL</string>
     <string name="PROFILE_CHANGE_EMAIL_NEW_EMAIL">New Email</string>
 </resources>

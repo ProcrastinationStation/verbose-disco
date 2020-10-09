@@ -34,9 +34,13 @@ class ProfileActivity: AppCompatActivity() {
 
         getUser()
 
-        profileTextViewUserName.text 
 
-        
+
+
+
+
+
+
     }
 
 
@@ -67,13 +71,16 @@ class ProfileActivity: AppCompatActivity() {
     }
 
     var token = LoginActivity.token
-    var sessionCookie1 = LoginActivity.sessionCookie1
+    var sessionCookie = LoginActivity.sessionCookie1
 
-    private val client = OkHttpClient()
+
 
 
 
 /*
+       private val client = OkHttpClient()
+
+
        fun getUser() {
             val request = okhttp3.Request.Builder()
                 .url(GET_USER)
@@ -107,6 +114,19 @@ class ProfileActivity: AppCompatActivity() {
 
                val bodyParsed = gson.fromJson(body, User::class.java)
 
+               profileTextViewUserName.text = bodyParsed.user.name
+
+               profileTextViewUserEmail.text = bodyParsed.user.email
+
+
+
+             if (bodyParsed.user.type) {
+                   profileTextViewUserAccountType.text = "Business"
+               } else {
+                   profileTextViewUserAccountType.text = "Personal"
+               }
+
+
            },
            { error ->
                Log.d("Error", "Could not get user: $error")
@@ -118,9 +138,9 @@ class ProfileActivity: AppCompatActivity() {
                val map =
                    HashMap<String, String>()
                map["Content-Type"] = "application/json"
-               map["set-cookie"] = sessionCookie1
+               map["set-cookie"] = sessionCookie
                map["magic-number"] = token
-               map["cookie"] = sessionCookie1
+               map["cookie"] = sessionCookie
                return map
            }
        }
