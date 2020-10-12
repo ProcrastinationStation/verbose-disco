@@ -12,9 +12,11 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.stockcourt.Models.Utilities.GET_PROFILE_IMAGE
 import com.example.stockcourt.Models.Utilities.GET_USER
 import com.example.stockcourt.R
 import com.google.gson.GsonBuilder
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
 import okhttp3.Call
 import okhttp3.Callback
@@ -32,7 +34,7 @@ class ProfileActivity: AppCompatActivity() {
 
 
 
-        getUser()
+        getUser({complete -> getUserImage()})
 
 
 
@@ -99,7 +101,9 @@ class ProfileActivity: AppCompatActivity() {
         }
 */
 
-    fun getUser() {
+    var id = ""
+
+    fun getUser( complete: (Boolean) -> Unit) {
 
       val queue = Volley.newRequestQueue(this)
 
@@ -118,7 +122,9 @@ class ProfileActivity: AppCompatActivity() {
 
                profileTextViewUserEmail.text = bodyParsed.user.email
 
+               id = bodyParsed.user.id.toString()
 
+            complete(true)
 
              if (bodyParsed.user.type) {
                    profileTextViewUserAccountType.text = "Business"
@@ -130,7 +136,7 @@ class ProfileActivity: AppCompatActivity() {
            },
            { error ->
                Log.d("Error", "Could not get user: $error")
-
+            complete(false)
            })
 
        {
@@ -152,9 +158,50 @@ class ProfileActivity: AppCompatActivity() {
    }
 
 
+
+    fun getUserImage() {
+
+        val queue = Volley.newRequestQueue(this)
+
+        val stringRequest = object: StringRequest(
+            Method.GET, GET_PROFILE_IMAGE + id, {
+                response ->
+
+                val body = response.toString()
+
+                val gson = GsonBuilder().create()
+
+                val image_url = gson.fromJson(body, imageURL::class.java)
+                
+
+                if (image_url.image_url == null) {
+
+                    println("No image link from server")
+                }
+                else {
+
+                    val profileImageView = profileCircleImageView
+                    Picasso.get().load(image_url.image_url).into(profileImageView)
+
+                }
+
+
+
+
+            }, { error ->
+                Log.d("Error", "Couldn`t get user image: $error")
+            }
+        )
+
+        {}
+
+         queue.add(stringRequest)
+    }
+
+
+
     data class User(
         val user: UserParsed
-
     )
 
     data class UserParsed(
@@ -173,6 +220,10 @@ class ProfileActivity: AppCompatActivity() {
         val address: String,
         val comment: String,
         val business_industry_type: String
+    )
+
+    data class imageURL(
+        val image_url: String
     )
 
 }
