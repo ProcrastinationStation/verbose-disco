@@ -1,14 +1,17 @@
 package com.example.stockcourt.Models.Controller
 
 
+import UI.ui.MainFragments.ArticleMenuDrawerFragment
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.parseAsHtml
 import com.example.stockcourt.Models.Utilities.GET_POST
+import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.article
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
@@ -20,6 +23,7 @@ import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.jsoup.Jsoup
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -46,6 +50,18 @@ class Article: AppCompatActivity() {
     }
 
 
+    fun articleMoreBtnClicked(view: View) {
+        val moreMenuDrawerFragment = ArticleMenuDrawerFragment()
+        moreMenuDrawerFragment.show(supportFragmentManager, moreMenuDrawerFragment.tag)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.article_more_menu, menu)
+        return true
+    }
+
+
 
     fun fetchJsonArticle(slug: String?) {
 
@@ -67,6 +83,10 @@ class Article: AppCompatActivity() {
                     textViewArticleHeader.text = BodyResponseParsed.title
 
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
+
+                    val html = Jsoup.parse(BodyResponseParsed.body)
+
+                    println(html)
 
 
 

@@ -15,12 +15,20 @@ import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_profile_change_name.*
 import okhttp3.*
 import org.json.JSONObject
+import java.net.CookieHandler
+import java.net.CookieManager
+import java.net.CookiePolicy
 
 class ProfileChangeNameActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_change_name)
 
+
+        val cookieManager = CookieManager()
+        CookieHandler.setDefault(cookieManager)
+
+        CookieHandler.setDefault(CookieManager(null, CookiePolicy.ACCEPT_ALL))
 
     }
 
@@ -84,8 +92,7 @@ class ProfileChangeNameActivity: AppCompatActivity() {
             }
 
             override fun getHeaders(): Map<String, String>? {
-                val map =
-                    HashMap<String, String>()
+                val map = HashMap<String, String>()
                 map["Content-Type"] = "application/json"
                 map["set-cookie"] = sessionCookie
                 map["magic-number"] = token

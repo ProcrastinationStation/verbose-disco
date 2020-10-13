@@ -78,7 +78,6 @@ class LoginActivity : AppCompatActivity() {
                 val responseHeaders = response!!.headers
                 val rawCookies: String? = responseHeaders["magic-number"].also {
                     magicnumber = it.toString()
-
                 }
                 return super.parseNetworkResponse(response);
             }
