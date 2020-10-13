@@ -65,33 +65,27 @@
                 app:layout_constraintStart_toStartOf="@+id/textViewHeader"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHeader" />
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="18dp"
-                android:layout_height="19dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="@+id/textViewArticle"
-                app:layout_constraintTop_toBottomOf="@+id/textViewArticle"
-                app:srcCompat="@mipmap/share_l4x" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="SHARE"
+            <Button
+                android:id="@+id/postShareButton"
+                android:layout_width="72dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:drawable/menuitem_background"
+                android:drawableLeft="@mipmap/share_l4x"
+                android:text="@string/ARTICLE_SHARE_BTN"
                 android:textColor="@color/colorDarkerWhite"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="@+id/imageView10" />
+                app:layout_constraintStart_toStartOf="@+id/textViewArticle"
+                app:layout_constraintTop_toBottomOf="@+id/textViewArticle" />
 
             <TextView
                 android:id="@+id/textViewDatePublished"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textColor="@color/colorGrey"
                 app:layout_constraintEnd_toEndOf="@+id/textViewArticle"
-                app:layout_constraintTop_toTopOf="@+id/textView9" />
+                app:layout_constraintTop_toTopOf="@+id/postShareButton" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

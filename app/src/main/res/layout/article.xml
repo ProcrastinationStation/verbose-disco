@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorLighterBlack"
+    >
 
     <ScrollView
         android:layout_width="0dp"
@@ -12,49 +14,14 @@
         android:background="@color/colorLighterBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@id/divider2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/articleBackBtn"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorLighterBlack"
-                android:onClick="articleBackBtnClicked"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/back4x" />
-
-            <ImageButton
-                android:id="@+id/articleMoreBtn"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@color/colorLighterBlack"
-                android:onClick="articleMoreBtnClicked"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/more_s4x" />
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="0dp"
-                android:layout_height="3dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorGrey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/articleBackBtn" />
 
             <TextView
                 android:id="@+id/textViewArticleHeader"
@@ -68,7 +35,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewArticleHeader"
@@ -123,6 +90,61 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/articleAuthor" />
+
+            <Button
+                android:id="@+id/articleShareButton"
+                android:layout_width="72dp"
+                android:layout_height="42dp"
+                android:background="@android:drawable/menuitem_background"
+                android:drawableLeft="@mipmap/share_l4x"
+                android:text="@string/ARTICLE_SHARE_BTN"
+                android:textColor="@color/colorDarkerWhite"
+                app:layout_constraintStart_toStartOf="@+id/textViewArticleBody"
+                app:layout_constraintTop_toBottomOf="@+id/textViewArticleBody" />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintEnd_toEndOf="@+id/textViewArticleBody"
+                app:layout_constraintStart_toStartOf="@+id/articleShareButton"
+                app:layout_constraintTop_toBottomOf="@id/articleShareButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/articleBackBtn" />
+
+    <ImageButton
+        android:id="@+id/articleMoreBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorLighterBlack"
+        android:onClick="articleMoreBtnClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/more_s4x" />
+
+    <ImageButton
+        android:id="@+id/articleBackBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorLighterBlack"
+        android:onClick="articleBackBtnClicked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back4x" />
 </androidx.constraintlayout.widget.ConstraintLayout>

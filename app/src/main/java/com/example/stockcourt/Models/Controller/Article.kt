@@ -10,6 +10,8 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.parseAsHtml
+import azadev.kotlin.css.Stylesheet
+import azadev.kotlin.css.color
 import com.example.stockcourt.Models.Utilities.GET_POST
 import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.article
@@ -18,6 +20,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article.*
 import kotlinx.android.synthetic.main.post.*
 import kotlinx.css.CSSBuilder
+import kotlinx.css.Contain
 import kotlinx.css.h1
 import okhttp3.Call
 import okhttp3.Callback
@@ -84,10 +87,23 @@ class Article: AppCompatActivity() {
 
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
 
-                    val html = Jsoup.parse(BodyResponseParsed.body)
+                    val html = Jsoup.parse(BodyResponseParsed.body).toString()
 
                     println(html)
 
+/*                    val css = Stylesheet{
+
+                        body {
+                            color = 0xffffff
+                        }
+                        h1 {
+                        color = 0x66bd9f
+                    }
+
+
+                    }
+
+                    css.renderToFile(html)*/
 
 
                     articleAuthor.text = BodyResponseParsed.written_by_user.toString()
