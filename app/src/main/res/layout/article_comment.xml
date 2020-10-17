@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/colorLighterBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorLighterBlack">
+
+
+            <ImageButton
+                android:id="@+id/articleCommentProfileImage"
+                android:layout_width="50dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:background="@android:drawable/menuitem_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/profile_avatar4x" />
+
+            <TextView
+                android:id="@+id/articleCommentUsernameTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/calibri_bold"
+                android:text="TextView"
+                android:textColor="@color/colorStockCourt"
+                app:layout_constraintStart_toEndOf="@+id/articleCommentProfileImage"
+                app:layout_constraintTop_toTopOf="@+id/articleCommentProfileImage" />
+
+            <TextView
+                android:id="@+id/articleCommentTimeTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/calibri_regular"
+                android:text="TextView"
+                android:textColor="@color/colorGrey"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/articleCommentUsernameTextview"
+                app:layout_constraintTop_toTopOf="@+id/articleCommentUsernameTextview" />
+
+            <ImageButton
+                android:id="@+id/articleCommentMoreBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@android:drawable/menuitem_background"
+                android:onClick="articleCommentMoreBtnClicked"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/articleCommentTimeTextview"
+                app:srcCompat="@mipmap/more_l4x" />
+
+            <TextView
+                android:id="@+id/articleCommentBodyTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/calibri_regular"
+                android:text="TextView"
+                android:textColor="@color/colorDarkerWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/articleCommentProfileImage"
+                app:layout_constraintTop_toBottomOf="@+id/articleCommentUsernameTextview" />
+
+            <Button
+                android:id="@+id/articleCommentReplyButton"
+                android:layout_width="72dp"
+                android:layout_height="46dp"
+                android:background="@android:drawable/menuitem_background"
+                android:drawableLeft="@mipmap/reply4x"
+                android:fontFamily="@font/calibri_regular"
+                android:onClick="articleCommentReplyBtnClicked"
+                android:text="@string/ARTICLE_COMMENT_REPLY_BTN"
+                android:textColor="@color/colorDarkerWhite"
+                app:layout_constraintStart_toStartOf="@+id/articleCommentBodyTextview"
+                app:layout_constraintTop_toBottomOf="@+id/articleCommentBodyTextview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

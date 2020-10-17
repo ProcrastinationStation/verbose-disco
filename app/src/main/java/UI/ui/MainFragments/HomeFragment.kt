@@ -123,8 +123,7 @@ class HomeFragment : Fragment() {
 
     data class BodyResponse(
         val news: List<Post>
-    ) {
-    }
+    )
 
 
     data class Post (
@@ -146,7 +145,7 @@ class HomeFragment : Fragment() {
         val approvedByUser: Any? = null,
         val tags: List<String>,
         val name: String
-    ) {}
+    )
 
     data class BodyResponseFeatured(
         val featured: List<Featured>

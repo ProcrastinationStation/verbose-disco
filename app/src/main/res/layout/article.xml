@@ -8,15 +8,50 @@
     android:background="@color/colorLighterBlack"
     >
 
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/articleBackBtn" />
+
+    <ImageButton
+        android:id="@+id/articleMoreBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorLighterBlack"
+        android:onClick="articleMoreBtnClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/more_s4x" />
+
+    <ImageButton
+        android:id="@+id/articleBackBtn"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorLighterBlack"
+        android:onClick="articleBackBtnClicked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back4x" />
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorLighterBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider2">
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -111,40 +146,15 @@
                 app:layout_constraintEnd_toEndOf="@+id/textViewArticleBody"
                 app:layout_constraintStart_toStartOf="@+id/articleShareButton"
                 app:layout_constraintTop_toBottomOf="@id/articleShareButton" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider13" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/articleBackBtn" />
 
-    <ImageButton
-        android:id="@+id/articleMoreBtn"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/colorLighterBlack"
-        android:onClick="articleMoreBtnClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/more_s4x" />
-
-    <ImageButton
-        android:id="@+id/articleBackBtn"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorLighterBlack"
-        android:onClick="articleBackBtnClicked"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/back4x" />
 </androidx.constraintlayout.widget.ConstraintLayout>

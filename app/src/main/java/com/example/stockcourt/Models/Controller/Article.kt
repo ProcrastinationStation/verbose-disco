@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.parseAsHtml
 import azadev.kotlin.css.Stylesheet
 import azadev.kotlin.css.color
+import com.example.stockcourt.Models.Utilities.GET_ARTICLE_COMMENTS
 import com.example.stockcourt.Models.Utilities.GET_POST
 import com.example.stockcourt.R
 import com.example.stockcourt.R.layout.article
@@ -22,10 +23,7 @@ import kotlinx.android.synthetic.main.post.*
 import kotlinx.css.CSSBuilder
 import kotlinx.css.Contain
 import kotlinx.css.h1
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
 import org.jsoup.Jsoup
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -64,9 +62,9 @@ class Article: AppCompatActivity() {
         return true
     }
 
+    var postId: Long = 0
 
-
-    fun fetchJsonArticle(slug: String?) {
+    private fun fetchJsonArticle(slug: String?) {
 
 
         val request = Request.Builder().url(GET_POST + slug).build()
@@ -88,6 +86,10 @@ class Article: AppCompatActivity() {
                     textViewArticleBody.text = BodyResponseParsed.body.parseAsHtml()
 
                     val html = Jsoup.parse(BodyResponseParsed.body).toString()
+
+                    postId = BodyResponseParsed.id
+
+                    println(postId)
 
                     println(html)
 
@@ -145,12 +147,46 @@ class Article: AppCompatActivity() {
                     Picasso.get().load(BodyResponseParsed.image).into(thumbnailImageView)
                 }
 
+                fetchArticleComment()
 
             }
 
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request")
             }
+        })
+
+    }
+
+
+    fun fetchArticleComment() {
+
+        val request = Request
+            .Builder()
+            .url("$GET_ARTICLE_COMMENTS$postId&limit=5")
+            .header("Content-Type", "application/json")
+            .build()
+
+        val client = OkHttpClient()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                val body = response.body?.string()
+
+                val gson = GsonBuilder().create()
+
+                val bodyResponseArticleCommentsParsed = gson.fromJson(body, CommentsParsed::class.java)
+
+                println(body)
+
+
+
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                println("Failed to get article comments")
+            }
+
         })
 
     }
@@ -179,6 +215,18 @@ class Article: AppCompatActivity() {
         // String
         // ],
         val name: String
+    )
+
+    data class CommentsParsed(
+        val comments: List<Comments>
+    )
+
+    data class Comments(
+        val id: Long,
+        val blog_post_id: Long,
+        val date: String,
+        val display_name: String,
+        val comment: String
     )
 
 
