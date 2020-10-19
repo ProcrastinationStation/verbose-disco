@@ -7,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.stockcourt.R
+import com.google.android.material.bottomnavigation.BottomNavigationMenu
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_trends.*
 import java.net.CookieHandler
 import java.net.CookieManager
@@ -23,7 +25,6 @@ class TrendsActivity : AppCompatActivity() {
         CookieHandler.setDefault(cookieManager)
 
 
-
         val homeFragment = HomeFragment()
         val commoditiesFragment = CommoditiesFragment()
         val currenciesFragment = CurrenciesFragment()
@@ -32,19 +33,33 @@ class TrendsActivity : AppCompatActivity() {
 
         makeCurrentFragment(homeFragment)
 
+        
+
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.stocksFragment -> makeCurrentFragment(stocksFragment)
-                R.id.indicesFragment -> makeCurrentFragment(indicesFragment)
-                R.id.trendsFragment -> makeCurrentFragment(homeFragment)
-                R.id.commoditiesFragment -> makeCurrentFragment(commoditiesFragment)
-                R.id.currenciesFragment -> makeCurrentFragment(currenciesFragment)
+            R.id.stocksFragmentBtn -> {
+                makeCurrentFragment(stocksFragment)
+                true
             }
-            true
-        }
+            R.id.indicesFragmentBtn -> {
+                makeCurrentFragment(indicesFragment)
+                true
+            }
+            R.id.trendsFragmentBtn -> {
+                makeCurrentFragment(homeFragment)
+                true
+            }
+            R.id.commoditiesFragmentBtn -> {
+                makeCurrentFragment(commoditiesFragment)
+                true
+            }
+            R.id.currenciesFragmentBtn -> {
+                makeCurrentFragment(currenciesFragment)
+                true
+            }
+            else -> false
+        } }
 
-
-        
     }
 
 

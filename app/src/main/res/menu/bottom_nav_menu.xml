@@ -2,34 +2,40 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/stocksFragment"
+        android:id="@+id/stocksFragmentBtn"
         android:icon="@mipmap/stocks4x"
         android:enabled="true"
-        android:title="Stocks" />
-
-    <item
-        android:id="@+id/indicesFragment"
-        android:icon="@mipmap/indices4x"
-        android:enabled="true"
-        android:title="Indices" />
-
-    <item
-        android:id="@+id/trendsFragment"
-        android:icon="@mipmap/stockcourt_or_home4x"
-        android:enabled="true"
-        android:title="Home"
+        android:title="Stocks"
+        android:iconTint="@color/colorDarkerWhite"
         />
 
     <item
-        android:id="@+id/commoditiesFragment"
-        android:icon="@mipmap/commodities4x"
+        android:id="@+id/indicesFragmentBtn"
+        android:icon="@mipmap/indices4x"
         android:enabled="true"
-        android:title="Commodities" />
+        android:title="Indices"
+        android:iconTint="@color/colorDarkerWhite"
+        />
 
     <item
-        android:id="@+id/currenciesFragment"
+        android:id="@+id/Empty"
+        android:enabled="false"
+        android:title="Empty"
+        />
+
+    <item
+        android:id="@+id/commoditiesFragmentBtn"
+        android:icon="@mipmap/commodities4x"
+        android:enabled="true"
+        android:title="Commodities"
+        android:iconTint="@color/colorDarkerWhite"
+        />
+    <item
+        android:id="@+id/currenciesFragmentBtn"
         android:icon="@mipmap/currencies4x"
         android:enabled="true"
-        android:title="Currencies" />
+        android:title="Currencies"
+        android:iconTint="@color/colorDarkerWhite"
+        />
 
 </menu>

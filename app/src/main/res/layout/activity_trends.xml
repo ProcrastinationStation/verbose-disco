@@ -10,21 +10,26 @@
         android:id="@+id/fl_wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        >
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:itemIconTint="@color/colorGrey"
+        android:clipChildren="false"
+        app:backgroundTint="@color/colorLighterBlack"
+        app:elevation="0dp"
+        app:itemIconTint="@animator/nav_icon_color_state"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="unlabeled"
-        app:backgroundTint="@color/colorLighterBlack"
-        android:clipChildren="false"
-        />
+        app:menu="@menu/bottom_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
     <fragment
         android:id="@+id/fragmentHomeContainerView"
@@ -38,4 +43,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/main_nav"
         />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/trendsFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNavigationView"
+        android:layout_gravity="bottom|center"
+        android:clickable="true"
+        android:contentDescription="@string/BOTTOM_NAV_BAR_FLOATING_BTN"
+        android:elevation="0dp"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorLighterBlack"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabCustomSize="70dp"
+        app:maxImageSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:srcCompat="@mipmap/stockcourt_or_home4x"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

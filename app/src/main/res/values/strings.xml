@@ -10,6 +10,7 @@
     <string name="I_want_to_receive_short_relevant_financial_information_to_my_email_address.">I want to receive short &amp; relevant financial information to my email address.</string>
     <string name="When_you_Register_you_agree_to_our_Terms_and_Conditions_and_have_read_our_Privacy_Policy.">When you <b>Register</b>, you agree to our <font fgcolor="#66bd9f">Terms &amp; Conditions</font> and have read our <font fgcolor="#66bd9f">Privacy Policy.</font></string>
     <string name="Need_an_invoice_Create_a_business_account.">Need an invoice?<font fgcolor="#66bd9f"> Create a business account.</font></string>
+    <string name="BOTTOM_NAV_BAR_FLOATING_BTN">Home Fragment</string>
     <string name="PROFILE">PROFILE</string>
     <string name="PROFILE_NAME">NAME</string>
     <string name="PROFILE_EMAIL">EMAIL</string>
