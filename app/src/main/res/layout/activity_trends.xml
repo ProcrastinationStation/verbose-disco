@@ -4,13 +4,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorLighterBlack"
+    >
+
+    <ImageButton
+        android:id="@+id/homeFragmentProfile"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/list_selector_background"
+        android:onClick="homeProfileBtnClicked"
+        android:src="@mipmap/profile_avatar4x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="330dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corners_gray"
+        android:drawableRight="@mipmap/search4x"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Search"
+        android:inputType="textPersonName"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="#bfbfbf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeFragmentProfile"
+        app:layout_constraintTop_toTopOf="@+id/homeFragmentProfile" />
+
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2">
 
     </FrameLayout>
 
@@ -20,8 +58,7 @@
         android:layout_height="wrap_content"
         android:clipChildren="false"
         app:backgroundTint="@color/colorLighterBlack"
-        app:elevation="0dp"
-        app:itemIconTint="@animator/nav_icon_color_state"
+        app:itemIconTint="@drawable/nav_icon_color_state"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,18 +68,17 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
-    <fragment
+<!--    <fragment
         android:id="@+id/fragmentHomeContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="560dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/main_nav"
-        />
+        app:navGraph="@navigation/main_nav" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/trendsFragmentBtn"
@@ -52,17 +88,17 @@
         android:layout_gravity="bottom|center"
         android:clickable="true"
         android:contentDescription="@string/BOTTOM_NAV_BAR_FLOATING_BTN"
-        android:elevation="0dp"
+        android:elevation="5dp"
+        android:onClick="trendsFragmentBtnClicked"
         android:visibility="visible"
         app:backgroundTint="@color/colorLighterBlack"
         app:borderWidth="0dp"
-        app:elevation="0dp"
+        app:elevation="5dp"
         app:fabCustomSize="70dp"
-        app:maxImageSize="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
-        app:srcCompat="@mipmap/stockcourt_or_home4x"
-        />
+        app:maxImageSize="40dp"
+        app:srcCompat="@mipmap/stockcourt_or_home4x" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,10 @@
         />
 
     <item
-        android:id="@+id/Empty"
-        android:enabled="false"
-        android:title="Empty"
+        android:id="@+id/trendsFragmentBtn"
+        android:icon="@mipmap/stockcourt_or_home4x"
+        android:enabled="true"
+        android:title="Home"
         />
 
     <item

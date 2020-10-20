@@ -9,36 +9,7 @@
     android:background="@color/colorLighterBlack">
 
 
-    <ImageButton
-        android:id="@+id/homeFragmentProfile"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:drawable/list_selector_background"
-        android:onClick="homeProfileBtnClicked"
-        android:src="@mipmap/profile_avatar4x"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="330dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_corners_gray"
-        android:drawableRight="@mipmap/search4x"
-        android:drawablePadding="16dp"
-        android:paddingRight="8dp"
-        android:paddingLeft="8dp"
-        android:ems="10"
-        android:hint="Search"
-        android:inputType="textPersonName"
-        android:textColor="#bfbfbf"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/homeFragmentProfile"
-        app:layout_constraintTop_toTopOf="@+id/homeFragmentProfile" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"

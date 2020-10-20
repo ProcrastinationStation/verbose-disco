@@ -10,6 +10,7 @@ import com.example.stockcourt.R
 import com.google.android.material.bottomnavigation.BottomNavigationMenu
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_trends.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import java.net.CookieHandler
 import java.net.CookieManager
 
@@ -74,4 +75,6 @@ class TrendsActivity : AppCompatActivity() {
         val profileIntent = Intent(this, ProfileActivity::class.java)
         startActivity(profileIntent)
     }
+
+
 }
